@@ -5,6 +5,7 @@ apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
   name: {{ $fullName }}
+  namespace: {{ .Values.ingress.namespace }}
   labels:
     app: {{ template "hello.name" . }}
     chart: {{ template "hello.chart" . }}
