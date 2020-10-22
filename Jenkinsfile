@@ -51,8 +51,8 @@ podTemplate(
         stage ('Deploy') {
             container ('helm') {
                 sh "/helm init --skip-refresh"
-                /* sh "/helm upgrade --install --wait --set image.repository=${repository},image.tag=${commitId} hello hello" */
-                sh "/helm version"
+                sh "/helm upgrade --install --wait --set image.repository=${repository},image.tag=${commitId} hello hello"
+                /* sh "/helm version" */
             }
         }
     }
